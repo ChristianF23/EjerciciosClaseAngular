@@ -1,0 +1,12 @@
+.formaBalota {
+  width: 8rem;
+  height: 8rem;
+  font-size: 4rem;
+  color: white;
+  background-color: #9f352f;
+  border-radius: 5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}

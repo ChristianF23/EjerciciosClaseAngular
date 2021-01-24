@@ -1,0 +1,20 @@
+<router-outlet></router-outlet>
+<div style="text-align:center">
+    <app-balota valor="{{ valor1 }}"></app-balota>
+    <app-balota valor="{{ valor2 }}"></app-balota>
+    <app-balota valor="{{ valor3 }}"></app-balota>
+    <app-balota valor="{{ valor4 }}"></app-balota>
+    <app-balota valor="{{ valor5 }}"></app-balota>
+</div>
+<div style="text-align:center">
+  <hr>
+  <button (click)="jugar()">JUGAR</button>
+  <hr>
+  <h2>{{numeroGanador}}</h2>
+</div>
+
+<app-par-impar valor="{{ suma }}" (parImpar)="llamarParImpar($event)" #calculo></app-par-impar>
+<div><h3>{{mensaje}}</h3></div>
+<hr>
+<p>Botón desde el Padre llamando el método en el hijo</p>
+<button (click) = "calculo.calculoParImpar(suma)">Cálculo</button>
