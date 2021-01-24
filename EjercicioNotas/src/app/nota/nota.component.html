@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-8" style="background-color:#969696">
+            <p>Estudiante: {{nombre}}</p>
+            <p>Edad: {{edad}}</p>
+            <p *ngIf="edad>18">Es mayor de edad</p>
+            <p *ngIf="promedio>=0 ">Promedio: {{promedio}}</p>
+            <p>
+                <input type="text" [(ngModel)]="nombre" />
+            </p>
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="calcularPromedio()">Calcular promedio</button>
+    <br><br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nota</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of notas; index as i">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{x}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <h3>Ejemplo Switch</h3>
+    <div [ngSwitch]="valor">
+        <p *ngSwitchCase="1">El valor es 1</p>
+        <p *ngSwitchCase="2">El valor es 2</p>
+        <p *ngSwitchDefault>No es ningún estado conocido</p>
+    </div>
+    <br>
+    <br>
+    <h3>Ejercicio NgClass</h3>
+    <div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
+    <div [ngClass]="currentClasses">This div is initially saveable, unchanged, and special</div>
+
+</div>
